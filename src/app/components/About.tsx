@@ -14,7 +14,7 @@ const About = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-7xl font-black font-mono mb-4 transform -rotate-1">
+          <h2 className="text-5xl md:text-7xl font-black font-mono mb-4">
             <span className="bg-black text-white px-4 py-2 border-4 border-black">ABOUT</span>
           </h2>
           <div className="w-24 h-2 bg-black mx-auto"></div>
@@ -54,7 +54,7 @@ const About = () => {
 
           {/* Right Column - Description */}
           <div>
-            <div className="bg-black text-white p-8 border-4 border-black mb-8 transform rotate-1">
+            <div className="bg-black text-white p-8 border-4 border-black mb-8">
               <h3 className="text-2xl font-bold font-mono mb-4 text-center">THE STORY</h3>
               <p className="text-lg leading-relaxed mb-4">
                 I'm a Software Engineer with 8 years of hands-on experience building systems that scale, 
