@@ -4,7 +4,7 @@ import { ChevronDown, Code, Terminal, Zap } from 'lucide-react';
 const Hero = () => {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const titles = ['SOFTWARE ENGINEER', 'FULL-STACK DEVELOPER', 'MOBILE APP DEVELOPER', 'CLOUD ARCHITECT'];
+  const titles = ['SOFTWARE ENGINEER', 'FULL-STACK DEVELOPER', 'MOBILE APP DEVELOPER'];
 
   useEffect(() => {
     const typeWriter = () => {
