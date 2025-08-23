@@ -73,7 +73,7 @@ const Hero = () => {
 
         {/* Description */}
         <div className="max-w-2xl mx-auto mb-12">
-          <p className="text-lg md:text-xl font-bold border-4 border-white bg-white text-black p-6 transform rotate-1">
+          <p className="text-lg md:text-xl font-bold border-4 border-white bg-white text-black p-6">
             Building systems that scale, apps that shine, and experiences that stick. 
             8 years of transforming ideas into elegant, high-performance software.
           </p>
