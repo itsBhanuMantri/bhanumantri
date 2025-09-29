@@ -33,85 +33,92 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white text-black">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="projects" className="py-24 bg-gradient-to-b from-gray-50 to-white text-gray-900">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-7xl font-black font-mono mb-4">
-            <span className="bg-black text-white px-4 py-2 border-4 border-black">PROJECTS</span>
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-7xl font-black font-mono mb-6">
+            <span className="gradient-primary text-white px-8 py-4 rounded-2xl border border-white/20 shadow-glow">
+              PROJECTS
+            </span>
           </h2>
-          <div className="w-24 h-2 bg-black mx-auto mb-8"></div>
-          <p className="text-xl font-bold max-w-2xl mx-auto">
-            A showcase of my recent work - each project tells a story of problem-solving, 
-            creativity, and technical excellence.
+          <div className="w-32 h-1 bg-gradient-to-r from-accent to-accent-secondary mx-auto mb-8 rounded-full"></div>
+          <p className="text-xl font-semibold max-w-3xl mx-auto text-gray-600 leading-relaxed">
+            A showcase of my recent work - each project tells a story of <span className="text-accent font-bold">problem-solving</span>, 
+            <span className="text-accent-secondary font-bold"> creativity</span>, and <span className="text-accent-tertiary font-bold">technical excellence</span>.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="space-y-16">
+        <div className="space-y-24">
           {projects.map((project, index) => {
             const Icon = project.icon;
             return (
               <div
                 key={project.title}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
+                className={`grid lg:grid-cols-2 gap-16 items-center ${
                   index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
                 }`}
               >
                 {/* Project Image */}
                 <div className={`relative group ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                  <div className="border-4 border-black bg-black p-4 transform transition-all duration-300 group-hover:scale-105">
+                  <div className="relative overflow-hidden rounded-3xl shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-1">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent-secondary/20 rounded-3xl"></div>
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-64 object-cover filter grayscale hover:grayscale-0 transition-all duration-300"
+                      className="w-full h-80 object-cover transition-all duration-500 group-hover:scale-110"
                     />
-                  </div>
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-80 flex items-center justify-center transition-all duration-300">
-                    <div className="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <a
-                        href={project.github}
-                        className="bg-white text-black p-3 border-4 border-black hover:bg-black hover:text-white hover:border-white transition-all duration-200"
-                      >
-                        <Github className="w-6 h-6" />
-                      </a>
-                      <a
-                        href={project.live}
-                        className="bg-black text-white p-3 border-4 border-white hover:bg-white hover:text-black hover:border-black transition-all duration-200"
-                      >
-                        <ExternalLink className="w-6 h-6" />
-                      </a>
+                    {/* Modern Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-3xl flex items-end justify-center pb-8">
+                      <div className="flex space-x-4">
+                        <a
+                          href={project.github}
+                          className="gradient-primary text-white p-4 rounded-2xl shadow-glow border border-white/20 hover:scale-110 transition-transform duration-200"
+                        >
+                          <Github className="w-6 h-6" />
+                        </a>
+                        <a
+                          href={project.live}
+                          className="gradient-secondary text-white p-4 rounded-2xl shadow-glow border border-white/20 hover:scale-110 transition-transform duration-200"
+                        >
+                          <ExternalLink className="w-6 h-6" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Project Info */}
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     {/* Project Header */}
-                    <div className="flex items-center space-x-4">
-                      <div className="bg-black p-3 border-4 border-black">
-                        <Icon className="w-8 h-8 text-white" />
+                    <div className="flex items-center space-x-6">
+                      <div className="gradient-primary p-4 rounded-2xl shadow-glow border border-white/20">
+                        <Icon className="w-10 h-10 text-white" />
                       </div>
-                      <h3 className="text-3xl md:text-4xl font-black font-mono">
+                      <h3 className="text-3xl md:text-4xl font-black font-mono bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
                         {project.title}
                       </h3>
                     </div>
 
                     {/* Description */}
-                    <div className="bg-black text-white p-6 border-4 border-black transition-transform duration-200">
-                      <p className="text-lg leading-relaxed">
+                    <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                      <p className="text-lg leading-relaxed text-gray-700 font-medium">
                         {project.description}
                       </p>
                     </div>
 
                     {/* Tech Stack */}
                     <div className="flex flex-wrap gap-3">
-                      {project.tech.map((tech) => (
+                      {project.tech.map((tech, techIndex) => (
                         <span
                           key={tech}
-                          className="bg-white text-black font-bold font-mono px-4 py-2 border-4 border-black hover:bg-black hover:text-white hover:border-white transition-all duration-200"
+                          className={`px-5 py-3 rounded-xl font-bold font-mono text-sm border border-white/20 shadow-lg hover:scale-105 transition-all duration-200 ${
+                            techIndex % 3 === 0 ? 'gradient-primary text-white shadow-glow' :
+                            techIndex % 3 === 1 ? 'gradient-secondary text-white shadow-glow' :
+                            'bg-accent-tertiary text-white shadow-glow'
+                          }`}
                         >
                           {tech}
                         </span>
@@ -122,17 +129,17 @@ const Projects = () => {
                     <div className="flex space-x-4">
                       <a
                         href={project.github}
-                        className="flex items-center space-x-2 bg-black text-white font-bold font-mono px-6 py-3 border-4 border-black hover:bg-white hover:text-black hover:border-black transition-all duration-200"
+                        className="group flex items-center space-x-3 gradient-primary text-white font-bold font-mono px-8 py-4 rounded-2xl shadow-glow border border-white/20 hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                       >
                         <Github className="w-5 h-5" />
-                        <span>CODE</span>
+                        <span>VIEW CODE</span>
                       </a>
                       <a
                         href={project.live}
-                        className="flex items-center space-x-2 bg-white text-black font-bold font-mono px-6 py-3 border-4 border-black hover:bg-black hover:text-white hover:border-white transition-all duration-200"
+                        className="group flex items-center space-x-3 glass-effect text-gray-900 font-bold font-mono px-8 py-4 rounded-2xl shadow-lg border border-accent hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                       >
                         <ExternalLink className="w-5 h-5" />
-                        <span>LIVE</span>
+                        <span>LIVE DEMO</span>
                       </a>
                     </div>
                   </div>
