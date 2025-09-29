@@ -91,26 +91,24 @@ export default function LumensCalculator() {
             {/* Length */}
             <div className="space-y-2">
               <label className="block font-bold text-gray-800 font-mono">Room Length (ft)</label>
-              <form.Field
-                name="length"
-                children={(field) => (
-                  <input
-                    type="number"
-                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-lg font-semibold bg-white/70 backdrop-blur-sm focus:border-accent focus:ring-4 focus:ring-accent/20 transition-all duration-300 hover:border-gray-300"
-                    placeholder="Enter room length"
-                    value={field.state.value}
-                    onChange={(e) => field.handleChange(e.target.value)}
-                  />
-                )}
-              />
+              <form.Field name="length">
+              {(field) => (
+                <input
+                  type="number"
+                  className="w-full border-2 border-gray-200 rounded-xl p-4 text-lg font-semibold bg-white/70 backdrop-blur-sm focus:border-accent focus:ring-4 focus:ring-accent/20 transition-all duration-300 hover:border-gray-300"
+                  placeholder="Enter room length"
+                  value={field.state.value}
+                  onChange={(e) => field.handleChange(e.target.value)}
+                />
+              )}
+            </form.Field>
             </div>
 
             {/* Breadth */}
             <div className="space-y-2">
               <label className="block font-bold text-gray-800 font-mono">Room Width (ft)</label>
-              <form.Field
-                name="breadth"
-                children={(field) => (
+              <form.Field name="breadth">
+                {(field) => (
                   <input
                     type="number"
                     className="w-full border-2 border-gray-200 rounded-xl p-4 text-lg font-semibold bg-white/70 backdrop-blur-sm focus:border-accent focus:ring-4 focus:ring-accent/20 transition-all duration-300 hover:border-gray-300"
@@ -119,15 +117,14 @@ export default function LumensCalculator() {
                     onChange={(e) => field.handleChange(e.target.value)}
                   />
                 )}
-              />
+              </form.Field>
             </div>
 
             {/* Room Type */}
             <div className="space-y-2">
               <label className="block font-bold text-gray-800 font-mono">Room Type</label>
-              <form.Field
-                name="roomType"
-                children={(field) => (
+              <form.Field name="roomType">
+                {(field) => (
                   <select
                     className="w-full border-2 border-gray-200 rounded-xl p-4 text-lg font-semibold bg-white/70 backdrop-blur-sm focus:border-accent focus:ring-4 focus:ring-accent/20 transition-all duration-300 hover:border-gray-300 cursor-pointer"
                     value={field.state.value}
@@ -140,15 +137,14 @@ export default function LumensCalculator() {
                     ))}
                   </select>
                 )}
-              />
+              </form.Field>
             </div>
 
             {/* Bulb Watts */}
             <div className="space-y-2">
               <label className="block font-bold text-gray-800 font-mono">Bulb Watts</label>
-              <form.Field
-                name="bulbWatts"
-                children={(field) => (
+              <form.Field name="bulbWatts">
+                {(field) => (
                   <input
                     type="number"
                     className="w-full border-2 border-gray-200 rounded-xl p-4 text-lg font-semibold bg-white/70 backdrop-blur-sm focus:border-accent focus:ring-4 focus:ring-accent/20 transition-all duration-300 hover:border-gray-300"
@@ -157,15 +153,14 @@ export default function LumensCalculator() {
                     onChange={(e) => field.handleChange(e.target.value)}
                   />
                 )}
-              />
+              </form.Field>
             </div>
 
             {/* Bulb Lumens */}
             <div className="space-y-2">
               <label className="block font-bold text-gray-800 font-mono">Bulb Lumens</label>
-              <form.Field
-                name="bulbLumens"
-                children={(field) => (
+              <form.Field name="bulbLumens">
+                {(field) => (
                   <input
                     type="number"
                     className="w-full border-2 border-gray-200 rounded-xl p-4 text-lg font-semibold bg-white/70 backdrop-blur-sm focus:border-accent focus:ring-4 focus:ring-accent/20 transition-all duration-300 hover:border-gray-300"
@@ -174,7 +169,7 @@ export default function LumensCalculator() {
                     onChange={(e) => field.handleChange(e.target.value)}
                   />
                 )}
-              />
+              </form.Field>
             </div>
 
             <button
